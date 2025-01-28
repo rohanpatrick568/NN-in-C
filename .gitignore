@@ -1,0 +1,21 @@
+# Build output
+bin/
+*.exe
+*.o
+
+# MNIST dataset files
+*.idx3-ubyte
+*.idx1-ubyte
+
+# IDE specific files
+.vscode/
+.vs/
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# OS specific files
+.DS_Store
+Thumbs.db
