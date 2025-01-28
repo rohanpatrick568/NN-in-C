@@ -109,16 +109,6 @@ The program handles memory allocation for:
 
 All allocations are properly freed at program termination.
 
-## Future Improvements
-
-1. Multi-threading support
-2. GPU acceleration
-3. Additional layer types
-4. Configurable network architecture
-5. Data augmentation
-6. Model saving/loading
-7. Real-time prediction
-
 ## License
 
 This project is open source and available for educational purposes.
@@ -139,7 +129,7 @@ This project is open source and available for educational purposes.
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/[your-username]/neural-network-c.git
+git clone https://github.com/rohanpatrick568/neural-network-c.git
 
 # Navigate to project directory
 cd neural-network-c
@@ -171,4 +161,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 * Yann LeCun for the MNIST dataset
-* [Add any other acknowledgments]
+
