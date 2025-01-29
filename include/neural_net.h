@@ -9,7 +9,7 @@
 
 /* Network Architecture Parameters */
 #define INPUT_SIZE 784    // 28x28 input image
-#define HIDDEN_SIZE 128   // Number of neurons in hidden layer
+#define HIDDEN_SIZE 64   // Number of neurons in hidden layer
 #define OUTPUT_SIZE 10    // Number of possible digits (0-9)
 
 /* Training Hyperparameters */

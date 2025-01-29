@@ -5,6 +5,16 @@
 #include <time.h>
 #include <string.h>
 
+// Function to print the digit image
+void print_digit(double *image) {
+    for (int i = 0; i < 28; i++) {
+        for (int j = 0; j < 28; j++) {
+            printf("%c", image[i * 28 + j] > 0.5 ? '#' : '.');
+        }
+        printf("\n");
+    }
+}
+
 int main() {
     srand(time(NULL));
 
@@ -62,6 +72,38 @@ int main() {
 
         double accuracy = calculate_accuracy(test_images, test_labels, TEST_SAMPLES, hidden_weights, hidden_bias, output_weights, output_bias);
         printf("Epoch %d, Loss: %.4f, Accuracy: %.2f%%\n", epoch + 1, total_loss / TRAIN_SAMPLES, accuracy * 100);
+    }
+
+    printf("\nTraining complete! Starting interactive testing...\n\n");
+
+    // Interactive testing loop
+    char input[10];
+    printf("Enter test sample index (0-%d) or 'q' to quit: ", TEST_SAMPLES-1);
+    while (fgets(input, sizeof(input), stdin)) {
+        if (input[0] == 'q' || input[0] == 'Q') break;
+
+        int test_idx = atoi(input);
+        if (test_idx < 0 || test_idx >= TEST_SAMPLES) {
+            printf("Invalid index. Please enter a number between 0 and %d: ", TEST_SAMPLES-1);
+            continue;
+        }
+
+        // Print the test digit
+        printf("\nTest image %d (True label: %d):\n", test_idx, test_labels[test_idx]);
+        print_digit(test_images[test_idx]);
+
+        // Make prediction
+        forward_pass(test_images[test_idx], hidden, output, 
+                    hidden_weights, hidden_bias, output_weights, output_bias);
+        int prediction = predict(output);
+
+        // Print results
+        printf("\nPrediction: %d\n", prediction);
+        printf("Confidence scores:\n");
+        for (int i = 0; i < OUTPUT_SIZE; i++) {
+            printf("Digit %d: %.2f%%\n", i, output[i] * 100);
+        }
+        printf("\nEnter another test index or 'q' to quit: ");
     }
 
     // Cleanup

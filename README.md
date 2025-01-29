@@ -85,6 +85,16 @@ NN in C/
 - Batch processing
 - Progress monitoring
 - Memory management
+- Interactive testing interface
+  - ASCII visualization of test digits
+  - Real-time predictions
+  - Confidence scores for all digits
+  - User-selected test samples
+
+## Usage
+
+### Training
+The program will first train the neural network and display progress:
 
 ## Dependencies
 
