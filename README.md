@@ -36,7 +36,7 @@ NN in C/
 ## Technical Specifications
 
 - Input layer: 784 neurons (28x28 pixels)
-- Hidden layer: 128 neurons
+- Hidden layer: 64 neurons
 - Output layer: 10 neurons (digits 0-9)
 - Batch size: 64
 - Learning rate: 0.01
