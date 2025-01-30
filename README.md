@@ -164,7 +164,7 @@ bin/mnist_nn.exe
 We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
-* **[Your Name]** - *Initial work*
+* **Rohan Patrick** - 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
