@@ -14,7 +14,7 @@
 
 /* Training Hyperparameters */
 #define LEARNING_RATE 0.01  // Step size for gradient descent
-#define EPOCHS 100          // Number of complete passes through the training data
+#define EPOCHS 10         // Number of complete passes through the training data
 #define TRAIN_SAMPLES 60000 // Size of MNIST training set
 #define TEST_SAMPLES 10000  // Size of MNIST test set
 #define BATCH_SIZE 64       // Number of samples per mini-batch
