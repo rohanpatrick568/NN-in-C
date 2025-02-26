@@ -36,7 +36,7 @@ NN in C/
 ## Technical Specifications
 
 - Input layer: 784 neurons (28x28 pixels)
-- Hidden layer: 128 neurons
+- Hidden layer: 64 neurons
 - Output layer: 10 neurons (digits 0-9)
 - Batch size: 64
 - Learning rate: 0.01
@@ -164,7 +164,7 @@ bin/mnist_nn.exe
 We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
-* **[Your Name]** - *Initial work*
+* **Rohan Patrick** - 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
