@@ -5,10 +5,10 @@ A from-scratch implementation of a feedforward neural network to classify handwr
 ## Project Structure
 
 ```
-NN in C/
+NN-in-C/
 │
-├── bin/                    # Compiled executable
-├── data/                   # MNIST dataset files
+├── bin/                    # Compiled executable (created by build.bat)
+├── data/                   # MNIST dataset files (download separately)
 │   ├── train-images.idx3-ubyte
 │   ├── train-labels.idx1-ubyte
 │   ├── t10k-images.idx3-ubyte
@@ -47,7 +47,7 @@ NN in C/
 ## Build Instructions
 
 1. Ensure you have GCC installed
-2. Place MNIST dataset files in the `data/` directory
+2. Place MNIST dataset files in the `data/` directory (see Dataset Setup below)
 3. Run the build script:
    ```bash
    build.bat
@@ -93,8 +93,13 @@ NN in C/
 
 ## Usage
 
-### Training
-The program will first train the neural network and display progress:
+The program first trains the network, printing loss and accuracy after each epoch:
+
+```
+Epoch 1, Loss: ..., Accuracy: ...%
+```
+
+It then switches to interactive testing: enter a test-set index (0-9999) to see that digit drawn in ASCII, the network's prediction and its confidence for each digit, or `q` to quit.
 
 ## Dependencies
 
@@ -119,10 +124,6 @@ The program handles memory allocation for:
 
 All allocations are properly freed at program termination.
 
-## License
-
-This project is open source and available for educational purposes.
-
 ## Getting Started
 
 ### Prerequisites
@@ -132,19 +133,19 @@ This project is open source and available for educational purposes.
 - 1GB RAM minimum
 
 ### Dataset Setup
-1. Navigate to the `data` directory
-2. Follow instructions in data/README.md to download MNIST dataset
-3. Extract the .gz files
+1. Create a `data/` directory in the project root
+2. Download the four MNIST files (training and test images and labels) from any MNIST mirror
+3. Extract the `.gz` files into `data/` so the names match: `train-images.idx3-ubyte`, `train-labels.idx1-ubyte`, `t10k-images.idx3-ubyte`, `t10k-labels.idx1-ubyte`
 
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/rohanpatrick568/neural-network-c.git
+git clone https://github.com/rohanpatrick568/NN-in-C.git
 
 # Navigate to project directory
-cd neural-network-c
+cd NN-in-C
 
-# Download and prepare MNIST dataset (follow data/README.md)
+# Download and prepare the MNIST dataset (see Dataset Setup above)
 
 # Build the project
 build.bat
@@ -160,11 +161,8 @@ bin/mnist_nn.exe
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Versioning
-We use [SemVer](http://semver.org/) for versioning.
-
 ## Authors
-* **Rohan Patrick** - 
+* **Rohan Patrick**
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
